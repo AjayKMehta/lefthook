@@ -1,0 +1,13 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: TOML
+      glob: "*.toml"
+      group:
+        piped: true
+        jobs:
+          - name: Format TOML files
+            run: taplo fmt {staged_files}
+            stage_fixed: true
+          - name: Lint TOML files
+            run: taplo lint {staged_files}
