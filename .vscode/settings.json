@@ -1,10 +1,11 @@
 {
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true
-    },
-    "fileVisibilityToggle.alsoToggleGitIgnoreExclusion": true
+  "explorer.excludeGitIgnore": true,
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/Thumbs.db": true
+  },
+  "fileVisibilityToggle.alsoToggleGitIgnoreExclusion": true
 }
