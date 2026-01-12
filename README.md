@@ -53,5 +53,5 @@ In order to use any of the hooks in this repo, please do the following:
       build_config: <New value>
     ```
 
-  > [!NOTE]
-  > Assumes that there is a solution file at repo root.
+> [!NOTE]
+> Assumes that there is a solution file at repo root.
