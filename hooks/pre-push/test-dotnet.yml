@@ -1,0 +1,15 @@
+templates:
+  build_config: Release
+
+pre-push:
+  parallel: true
+  jobs:
+    - name: Run tests (.NET)
+      glob: "**/*.{cs,csproj,sln,slnx}"
+      group:
+        piped: true
+        jobs:
+          - name: Build solution
+            run: dotnet build -c {build_config}
+          - name: Run tests
+            run: dotnet test --no-build -c {build_config}
