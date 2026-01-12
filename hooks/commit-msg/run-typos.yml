@@ -1,0 +1,8 @@
+commit-msg:
+  parallel: true
+  skip:
+    - run: cat .git/COMMIT_EDITMSG | rg -e "^fixup! "
+  jobs:
+    - name: Run typos
+      run: typos -w $1
+      stage_fixed: true

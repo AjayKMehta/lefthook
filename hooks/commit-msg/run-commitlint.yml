@@ -1,0 +1,7 @@
+commit-msg:
+  parallel: true
+  skip:
+    - run: cat .git/COMMIT_EDITMSG | rg -e "^fixup! "
+  jobs:
+    - name: Run commitlint
+      run: commitlint --edit $1

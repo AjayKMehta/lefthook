@@ -27,8 +27,8 @@ In order to use any of the hooks in this repo, please do the following:
 
 ### [commit-msg](https://git-scm.com/docs/githooks#_commit_msg)
 
-- [run-commitlint.yml](hooks\commit-msg\run-commitlint.yml):
-- [run-typos.yml](hooks\commit-msg\run-typos.yml):
+- [run-commitlint.yml](hooks\commit-msg\run-commitlint.yml): Requires [commitlint](https://github.com/conventional-changelog/commitlint) to be installed.
+- [run-typos.yml](hooks\commit-msg\run-typos.yml): Uses [typos](https://github.com/crate-ci/typos) to spellcheck commit messages.
 
 ### [pre-commit](https://git-scm.com/docs/githooks#_pre_commit)
 
