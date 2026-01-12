@@ -13,6 +13,7 @@ output:
   - skips # Print "skip" (i.e. no files matched)
 
 extends:
+  - /hooks/commit-msg/run-typos.yml
   - /hooks/pre-commit/lint-toml.yml
   - /hooks/pre-commit/lint-vscode.yml
   - /hooks/pre-commit/lint-yaml.yml
