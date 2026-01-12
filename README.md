@@ -21,7 +21,8 @@ In order to use any of the hooks in this repo, please do the following:
 
     > :bulb: All the hooks are located in `hooks/<hook-type>/<hook>`.
 
-4. Run `lefthook install` to install these hooks in your repo. You can use `lefthook check-install` and `lefthook dump` to verify everything is installed and configured correctly.
+4. Install dependencies for any hooks of interest (see next section for details).
+5. Run `lefthook install` to install these hooks in your repo. You can use `lefthook check-install` and `lefthook dump` to verify everything is installed and configured correctly.
 
 ## Available Hooks
 
@@ -32,7 +33,10 @@ In order to use any of the hooks in this repo, please do the following:
 
 ### [pre-commit](https://git-scm.com/docs/githooks#_pre_commit)
 
-- [lint-docker.yml](hooks/pre-commit/lint-docker.yml): This requires [hadolint]([/](https://github.com/hadolint/hadolint)) to be installed.
+- [analyze-csharp.yml](hooks/pre-commit/analyze-csharp.yml): This uses `dotnet format` to run analyzers on staged C# files.
+- [format-csharp.yml](hooks/pre-commit/format-csharp.yml): This uses `dotnet format` to check formatting of staged C# files.
+- [lint-actions.yml](hooks/pre-commit/lint-actions.yml): This requires [actionlint](https://github.com/rhysd/actionlint) to be installed.
+- [lint-docker.yml](hooks/pre-commit/lint-docker.yml): This requires [hadolint](https://github.com/hadolint/hadolint) to be installed.
 - [lint-markdown.yml](hooks/pre-commit/lint-markdown.yml): This requires [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) to be installed.
 - [lint-toml.yml](hooks/pre-commit/lint-toml.yml): This requires [taplo](https://github.com/tamasfe/taplo) to be installed.
 - [lint-yaml.yml](hooks/pre-commit/lint-yaml.yml): This requires [yamllint](https://yamllint.readthedocs.io/en/stable/index.html) to be installed.
