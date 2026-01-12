@@ -1,0 +1,6 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Format C# code
+      glob: "**/*.cs"
+      run: dotnet format --severity warn --verbosity normal --verify-no-changes --include {staged_files}

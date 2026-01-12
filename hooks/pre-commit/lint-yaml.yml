@@ -1,0 +1,6 @@
+pre-commit:
+  parallel: true
+  jobs:
+    - name: Lint YAML
+      glob: "*.{yml,yaml}"
+      run: yamllint -f colored {staged_files}
