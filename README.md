@@ -41,8 +41,10 @@ In order to use any of the hooks in this repo, please do the following:
 - [format-csharp.yml](hooks/pre-commit/format-csharp.yml): This uses `dotnet format` to check formatting of staged C# files.
 - [lint-actions.yml](hooks/pre-commit/lint-actions.yml): This requires [actionlint](https://github.com/rhysd/actionlint) to be installed.
 - [lint-docker.yml](hooks/pre-commit/lint-docker.yml): This requires [hadolint](https://github.com/hadolint/hadolint) to be installed.
+- [lint-json.yml](/hooks/pre-commit/lint-json.yml): This requires [jsonlint](https://github.com/prantlf/jsonlint) to be installed. It removes duplicate keys and pretty prints JSON files.
 - [lint-markdown.yml](hooks/pre-commit/lint-markdown.yml): This requires [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) to be installed.
 - [lint-toml.yml](hooks/pre-commit/lint-toml.yml): This requires [taplo](https://github.com/tamasfe/taplo) to be installed.
+- [lint-vscode.yml](/hooks/pre-commit/lint-vscode.yml): This requires [jsonlint](https://github.com/prantlf/jsonlint) to be installed. It removes duplicate keys and sorts `settings.json`.
 - [lint-yaml.yml](hooks/pre-commit/lint-yaml.yml): This requires [yamllint](https://yamllint.readthedocs.io/en/stable/index.html) to be installed.
 
 ### [pre-push](https://git-scm.com/docs/githooks#_pre_push)
