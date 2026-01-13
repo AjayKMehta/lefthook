@@ -3,5 +3,4 @@ pre-commit:
   jobs:
     - name: Lint Markdown
       glob: "*.md"
-      run: markdownlint-cli2 {staged_files} --fix
-      stage_fixed: true
+      run: markdownlint-cli2 {staged_files}
