@@ -1,0 +1,5 @@
+post-checkout:
+  parallel: true
+  jobs:
+    - script: dotnet-clean
+      runner: bash
