@@ -33,7 +33,7 @@ In order to use any of the hooks in this repo, please do the following:
 
 ### [post-checkout](https://git-scm.com/docs/githooks#_post_checkout)
 
-- [dotnet-clean.yml]: Run `dotnet clean` after checkout.
+- [dotnet-clean.yml](hooks/post-checkout/dotnet-clean.yml): Run `dotnet clean` after checkout.
 
 ### [post-merge](https://git-scm.com/docs/githooks#_post_merge)
 
