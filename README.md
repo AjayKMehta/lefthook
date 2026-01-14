@@ -31,6 +31,10 @@ In order to use any of the hooks in this repo, please do the following:
 - [run-commitlint.yml](hooks\commit-msg\run-commitlint.yml): Requires [commitlint](https://github.com/conventional-changelog/commitlint) to be installed.
 - [run-typos.yml](hooks\commit-msg\run-typos.yml): Uses [typos](https://github.com/crate-ci/typos) to spellcheck commit messages.
 
+### [post-checkout](https://git-scm.com/docs/githooks#_post_checkout)
+
+- [dotnet-clean.yml]: Run `dotnet clean` after checkout.
+
 ### [post-merge](https://git-scm.com/docs/githooks#_post_merge)
 
 - [restore-nuget.yml](hooks/post-merge/restore-nuget.yml): Restore NuGet packages if any lock file changes.
