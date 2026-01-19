@@ -12,4 +12,11 @@ pre-push:
           - name: Build solution
             run: dotnet build -c {build_config}
           - name: Run tests
+            skip:
+              - run: |
+                  HAS_TESTS=$(
+                    dotnet test --list-tests --no-build -c {build_config} >/dev/null 2>&1
+                    echo $?
+                  )
+                  test "$HAS_TESTS" -ne 0
             run: dotnet test --no-build -c {build_config}
