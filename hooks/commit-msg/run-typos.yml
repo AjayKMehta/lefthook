@@ -4,5 +4,5 @@ commit-msg:
     - run: cat .git/COMMIT_EDITMSG | rg -e "^fixup! "
   jobs:
     - name: Run typos
-      run: typos -w $1
+      run: typos {1} -w
       stage_fixed: true
