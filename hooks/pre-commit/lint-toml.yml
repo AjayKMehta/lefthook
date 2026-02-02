@@ -1,7 +1,7 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: TOML
+    - name: Format and lint TOML
       glob: "*.toml"
       group:
         piped: true
