@@ -4,3 +4,4 @@ post-checkout:
     - name: Clean .NET code
       script: dotnet-clean
       runner: bash
+      timeout: 30s

@@ -6,3 +6,4 @@ commit-msg:
     - name: Run typos
       run: typos {1} -w
       stage_fixed: true
+      timeout: 10s

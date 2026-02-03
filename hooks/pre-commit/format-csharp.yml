@@ -4,3 +4,4 @@ pre-commit:
     - name: Format C# code
       glob: "**/*.cs"
       run: dotnet format --severity warn --verbosity normal --verify-no-changes --include {staged_files}
+      timeout: 30s
