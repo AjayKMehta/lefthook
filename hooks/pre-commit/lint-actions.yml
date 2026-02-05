@@ -3,4 +3,4 @@ pre-commit:
   jobs:
     - name: Lint GitHub actions
       glob: .github/workflows/*.yml
-      run: actionlint
+      run: actionlint {staged_files}
