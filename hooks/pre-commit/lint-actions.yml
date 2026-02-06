@@ -1,6 +1,6 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: Lint GitHub actions
+    - name: lint-actions
       glob: .github/workflows/*.yml
       run: actionlint {staged_files}

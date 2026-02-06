@@ -1,6 +1,6 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: Lint Markdown
+    - name: lint-markdown
       glob: "*.md"
       run: markdownlint-cli2 {staged_files}

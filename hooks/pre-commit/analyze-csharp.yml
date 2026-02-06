@@ -1,6 +1,6 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: Run analyzers for C# code
+    - name: analyze-dotnet
       glob: "**/*.{cs,csproj,sln,slnx}"
       run: dotnet format analyzers --severity warn --verbosity normal --verify-no-changes

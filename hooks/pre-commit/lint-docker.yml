@@ -1,6 +1,6 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: Lint Docker images
+    - name: lint-docker
       glob: Dockerfile*
       run: hadolint {staged_files}

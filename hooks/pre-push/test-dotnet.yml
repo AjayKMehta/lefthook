@@ -4,14 +4,14 @@ templates:
 pre-push:
   parallel: true
   jobs:
-    - name: Run tests (.NET)
+    - name: test-dotnet
       glob: "**/*.{cs,csproj,sln,slnx}"
       group:
         piped: true
         jobs:
-          - name: Build solution
+          - name: build-solution
             run: dotnet build -c {build_config}
-          - name: Run tests
+          - name: run-tests
             skip:
               - run: |
                   HAS_TESTS=$(

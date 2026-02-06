@@ -1,7 +1,7 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: Lint VSCode Settings
+    - name: lint-vscode
       glob: .vscode/settings.json
       run: jsonlint {staged_files} -C --no-duplicate-keys --compact --quiet --continue --trailing-newline --enforce-double-quotes --in-place --pretty-print --sort-keys-ignore-case --trim-trailing-commas
       stage_fixed: true

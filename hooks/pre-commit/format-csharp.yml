@@ -1,7 +1,7 @@
 pre-commit:
   parallel: true
   jobs:
-    - name: Format C# code
+    - name: format-csharp
       glob: "**/*.cs"
       run: dotnet format --severity warn --verbosity normal --verify-no-changes --include {staged_files}
       timeout: 30s
