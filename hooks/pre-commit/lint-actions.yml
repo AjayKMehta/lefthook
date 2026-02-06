@@ -4,3 +4,4 @@ pre-commit:
     - name: lint-actions
       glob: .github/workflows/*.yml
       run: actionlint {staged_files}
+      timeout: 20s
