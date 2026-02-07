@@ -1,6 +1,7 @@
+<!-- markdownlint-disable MD013-->
 # lefthook
 
-This repo contains a collection of reusable [lefthook](https://lefthook.dev) configuration files for various languages and tools.
+This repo contains a collection of [lefthook](https://lefthook.dev) configuration files for various languages and tools.
 
 ## Usage
 
@@ -22,7 +23,7 @@ In order to use any of the hooks in this repo, please do the following:
     > :bulb: All the hooks are located in `hooks/<hook-type>/<hook>`.
 
 4. Install dependencies for any hooks of interest (see next section for details).
-5. Run `lefthook install` to install these hooks in your repo. You can use `lefthook check-install` and `lefthook dump` to verify everything is installed and configured correctly.
+5. Run `lefthook install` to install these hooks in your repo. You can use `lefthook check-install` and `lefthook dump` to verify that everything is installed and configured correctly.
 
 ## Available Hooks
 
