@@ -3,6 +3,7 @@ pre-commit:
   jobs:
     - name: check-toml
       glob: "*.toml"
+      tags: [lint, toml]
       group:
         piped: true
         jobs:

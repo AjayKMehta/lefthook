@@ -4,6 +4,7 @@ pre-commit:
   parallel: true
   jobs:
     - name: lint-yaml
+      tags: [lint, yaml]
       glob: "*.{yml,yaml}"
       run: yamllint -f colored {staged_files}
       timeout: 20s
