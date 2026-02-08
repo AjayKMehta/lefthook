@@ -4,6 +4,7 @@ post-checkout:
   parallel: true
   jobs:
     - name: clean-dotnet
+      tags: [dotnet]
       script: dotnet-clean
       runner: bash
       timeout: 30s

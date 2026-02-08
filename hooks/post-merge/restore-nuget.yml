@@ -3,6 +3,6 @@ post-merge:
   files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
   jobs:
     - name: restore-nuget
+      tags: [dotnet]
       glob: '**/packages.lock.json'
       run: dotnet restore
-      stage_fixed: true

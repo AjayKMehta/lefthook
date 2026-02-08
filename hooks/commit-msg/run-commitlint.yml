@@ -4,4 +4,5 @@ commit-msg:
     - run: cat .git/COMMIT_EDITMSG | rg -e "^fixup! "
   jobs:
     - name: commitlint
+      tags: [lint]
       run: commitlint --edit $1

@@ -6,6 +6,7 @@ commit-msg:
     - run: cat .git/COMMIT_EDITMSG | rg -e "^fixup! "
   jobs:
     - name: typos
+      tags: [lint, spelling]
       run: typos {1} -w
       stage_fixed: true
       timeout: 10s
