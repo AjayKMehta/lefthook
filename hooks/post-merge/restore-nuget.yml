@@ -5,4 +5,4 @@ post-merge:
     - name: restore-nuget
       tags: [dotnet]
       glob: '**/packages.lock.json'
-      run: dotnet restore
+      run: dotnet restore --nologo
