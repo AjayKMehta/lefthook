@@ -6,5 +6,6 @@ pre-commit:
     - name: format-csharp
       glob: "**/*.cs"
       tags: [format, dotnet]
-      run: dotnet format --severity warn --verbosity normal --verify-no-changes --include {staged_files}
+      args: --severity warn --verbosity normal
+      run: dotnet format --verify-no-changes --include {staged_files}
       timeout: 30s
