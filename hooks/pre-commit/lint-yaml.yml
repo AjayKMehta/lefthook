@@ -6,5 +6,6 @@ pre-commit:
     - name: lint-yaml
       tags: [lint, yaml]
       glob: "*.{yml,yaml}"
-      run: yamllint -f colored {staged_files}
+      args: -f colored
+      run: yamllint {staged_files}
       timeout: 20s
