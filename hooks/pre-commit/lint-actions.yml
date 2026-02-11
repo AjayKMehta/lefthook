@@ -4,17 +4,17 @@ pre-commit:
   parallel: true
   jobs:
     - name: lint-actions
-    - group:
-      parallel: false
-      jobs:
-        - name: actionlint
-          glob: .github/workflows/*.yml
-          tags: [lint, github]
-          run: actionlint {staged_files}
-          timeout: 20s
-        - name: zizmor
-          glob: .github/workflows/*.yml
-          tags: [lint, github]
-          args: --min-severity medium
-          run: zizmor {staged_files}
-          timeout: 10s
+      group:
+        parallel: false
+        jobs:
+          - name: actionlint
+            glob: .github/workflows/*.yml
+            tags: [lint, github]
+            run: actionlint {staged_files}
+            timeout: 20s
+          - name: zizmor
+            glob: .github/workflows/*.yml
+            tags: [lint, github]
+            args: --min-severity medium
+            run: zizmor {staged_files}
+            timeout: 10s
