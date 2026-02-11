@@ -7,5 +7,7 @@ pre-commit:
       glob: "*.json"
       exclude: .vscode/settings.json
       tags: [lint, json]
-      run: jsonlint {staged_files} -C --no-duplicate-keys --compact --quiet --continue --trailing-newline --enforce-double-quotes --in-place --pretty-print --trim-trailing-commas
+      args: --compact --trailing-newline --enforce-double-quotes  --pretty-print --trim-trailing-commas
+      run: jsonlint {staged_files} -C --no-duplicate-keys --quiet --continue --in-place
+      stage_fixed: true
       timeout: 20s
