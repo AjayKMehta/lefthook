@@ -1,0 +1,10 @@
+min_version: 2.1.0
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: lint-r
+      tags: [lint, r]
+      glob: "*.{Rmd,R, qmd}"
+      run: jarl check --fix --allow-dirty {staged_files}
+      stage_fixed: true
