@@ -25,6 +25,23 @@ In order to use any of the hooks in this repo, please do the following:
 4. Install dependencies for any hooks of interest (see next section for details).
 5. Run `lefthook install` to install these hooks in your repo. You can use `lefthook check-install` and `lefthook dump` to verify that everything is installed and configured correctly.
 
+### Overriding default values
+
+Some hooks have `timeout` and `args` specified which you may wish to change. In order to do so, create a `lefthook-local.yml` file in your repo and specify the necessary values. For more information, see [Local config](https://lefthook.dev/usage/features/local.html).
+
+For example, if you want to change the minimum severity for [`analyze-csharp`](hooks\pre-commit\analyze-csharp.yml) to `warn` from `error`:
+
+```yaml
+# lefthook-local.yml
+pre-commit:
+  parallel: true
+  jobs:
+    - name: analyze-csharp
+      # Original value:
+      # args: --severity error --verbosity normal
+      args: --severity warn --verbosity normal
+```
+
 ## Available Hooks
 
 ### [commit-msg](https://git-scm.com/docs/githooks#_commit_msg)
