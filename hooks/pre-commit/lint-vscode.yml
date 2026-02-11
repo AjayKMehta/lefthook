@@ -4,5 +4,6 @@ pre-commit:
     - name: lint-vscode
       tags: [lint, vscode]
       glob: .vscode/settings.json
-      run: jsonlint {staged_files} -C --no-duplicate-keys --compact --quiet --continue --trailing-newline --enforce-double-quotes --in-place --pretty-print --sort-keys-ignore-case --trim-trailing-commas
+      args: --compact --trailing-newline --enforce-double-quotes  --pretty-print --trim-trailing-commas --sort-keys-ignore-case
+      run: jsonlint {staged_files} -C --no-duplicate-keys --quiet --continue --in-place
       stage_fixed: true
