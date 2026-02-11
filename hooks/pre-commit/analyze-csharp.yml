@@ -6,5 +6,6 @@ pre-commit:
     - name: analyze-dotnet
       glob: "**/*.{cs,csproj,sln,slnx}"
       tags: [lint, dotnet]
-      run: dotnet format analyzers --severity warn --verbosity normal --verify-no-changes
+      args: --severity warn --verbosity normal
+      run: dotnet format analyzers --verify-no-changes
       timeout: 20s
