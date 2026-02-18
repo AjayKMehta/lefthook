@@ -1,0 +1,17 @@
+min_version: 2.1.0
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: ruff
+      tags: [python]
+      glob: "*.{py, ipynb}"
+      group:
+        parallel: false
+        jobs:
+          - name: format-python
+            run: ruff format --force-exclude {staged_files}
+            stage_fixed: true
+          - name: lint-python
+            run: ruff check --force-exclude --fix {staged_files}
+            stage_fixed: true

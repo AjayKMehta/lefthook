@@ -69,6 +69,7 @@ pre-commit:
 - [lint-toml.yml](hooks/pre-commit/lint-toml.yml): This requires [taplo](https://github.com/tamasfe/taplo) to be installed.
 - [lint-vscode.yml](/hooks/pre-commit/lint-vscode.yml): This requires [jsonlint](https://github.com/prantlf/jsonlint) to be installed. It removes duplicate keys and sorts `settings.json`.
 - [lint-yaml.yml](hooks/pre-commit/lint-yaml.yml): This requires [yamllint](https://yamllint.readthedocs.io/en/stable/index.html) to be installed.
+- [ruff.yml](hooks/pre-commit/ruff.yml): This requires [ruff](https://github.com/astral-sh/ruff) to be installed.
 
 ### [pre-push](https://git-scm.com/docs/githooks#_pre_push)
 
