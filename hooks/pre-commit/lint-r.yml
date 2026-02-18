@@ -5,6 +5,8 @@ pre-commit:
   jobs:
     - name: lint-r
       tags: [lint, r]
-      glob: "*.{Rmd,R, qmd}"
+      # Doesn't support Rmd and Qmd currently:
+      # https://github.com/etiennebacher/jarl/issues/50
+      glob: "*.{R}"
       run: jarl check --fix --allow-dirty {staged_files}
       stage_fixed: true
