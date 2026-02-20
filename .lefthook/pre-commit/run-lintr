@@ -1,0 +1,26 @@
+#!/bin/bash
+
+set -e
+
+staged_files=$1
+
+echo "Linting staged R/Rmd/qmd files..."
+
+pass=true
+
+while IFS= read -r file; do
+result=$(Rscript -e "lintr::lint('$file')")
+
+if [ -n "$result" ]; then
+    echo "Lint errors in $file:"
+    echo "$result"
+    pass=false
+fi
+done <<< "$staged_files"
+
+if ! $pass; then
+echo "Linting failed. Please fix errors before committing."
+exit 1
+fi
+
+exit 0

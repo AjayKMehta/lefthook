@@ -66,6 +66,7 @@ pre-commit:
 - [lint-json.yml](/hooks/pre-commit/lint-json.yml): This requires [jsonlint](https://github.com/prantlf/jsonlint) to be installed. It removes duplicate keys and pretty prints JSON files.
 - [lint-markdown.yml](hooks/pre-commit/lint-markdown.yml): This requires [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) to be installed.
 - [lint-r.yml](hooks/pre-commit/lint-r.yml): This requires [jarl](https://jarl.etiennebacher.com/) to be installed.
+- [run-lintr.yml](hooks/pre-commit/run-lintr.yml): This requires R and `lintr` R package to be installed.
 - [lint-toml.yml](hooks/pre-commit/lint-toml.yml): This requires [taplo](https://github.com/tamasfe/taplo) to be installed.
 - [lint-vscode.yml](/hooks/pre-commit/lint-vscode.yml): This requires [jsonlint](https://github.com/prantlf/jsonlint) to be installed. It removes duplicate keys and sorts `settings.json`.
 - [lint-yaml.yml](hooks/pre-commit/lint-yaml.yml): This requires [yamllint](https://yamllint.readthedocs.io/en/stable/index.html) to be installed.

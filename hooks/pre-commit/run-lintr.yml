@@ -1,0 +1,12 @@
+min_version: 2.1.0
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: run-lintr
+      tags: [r, lint]
+      glob: "*.{R,Rmd,qmd}"
+      script: run-lintr
+      args: "{staged_files}"
+      runner: bash
+      timeout: 30s
