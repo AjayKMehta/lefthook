@@ -9,7 +9,10 @@ pre-push:
   jobs:
     - name: check-dotnet
       tags: [dotnet, tests]
-      glob: "**/*.{cs,csproj,sln,slnx}"
+      glob:
+        - "**/*.{cs,csproj,sln,slnx}"
+        - "**/Directory.Build.props"
+        - "**/Directory.Packages.props"
       group:
         piped: true
         jobs:
