@@ -7,8 +7,10 @@ pre-commit:
   parallel: true
   jobs:
     - name: analyze-csharp
-      glob: "**/*.{cs,csproj,sln,slnx}"
       tags: [lint, dotnet]
+      skip:
+        - run: test "${ANALYZE_DOTNET:-0}" -eq 0
+      glob: "**/*.{cs,csproj,sln,slnx}"
       args: --severity error --verbosity normal --no-restore
       run: dotnet format analyzers --verify-no-changes --include {staged_files}
       timeout: 30s

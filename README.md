@@ -79,7 +79,7 @@ pre-commit:
 - [check-dotnet.yml](hooks/pre-push/check-dotnet.yml):
   - This ensures:
     - .NET code builds
-    - analyzers run without errors
+    - analyzers run without errors (if `$ANALYZE_DOTNET` is not 0).
     - all tests run successfully[^skip]
   - You can override the default build configuration (`Release`) by adding this to your repo's `lefthook-local.yml`:
 

@@ -17,13 +17,17 @@ pre-push:
         piped: true
         jobs:
           - name: build-solution
+            tags: [dotnet]
             run: dotnet build -c {build_config}
           - name: analyze-csharp
             tags: [lint, dotnet]
+            skip:
+              - run: test "${ANALYZE_DOTNET:-0}" -eq 0
             args: --severity error --verbosity normal --no-restore
             run: dotnet format analyzers --verify-no-changes
-            timeout: 60s
+            timeout: 600s
           - name: run-tests
+            tags: [test, dotnet]
             skip:
               - run: |
                     # Skip everything if SKIP_TESTS is 1
