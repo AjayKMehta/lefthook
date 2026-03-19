@@ -6,6 +6,6 @@ pre-commit:
     - name: analyze-csharp
       glob: "**/*.{cs,csproj,sln,slnx}"
       tags: [lint, dotnet]
-      args: --severity error --verbosity normal
-      run: dotnet format analyzers --verify-no-changes
-      timeout: 20s
+      args: --severity error --verbosity normal --no-restore
+      run: dotnet format analyzers --verify-no-changes --include {staged_files}
+      timeout: 30s
