@@ -76,8 +76,11 @@ pre-commit:
 ### [pre-push](https://git-scm.com/docs/githooks#_pre_push)
 
 - [detect-secrets.yml](hooks/pre-push/detect-secrets.yml): This requires [gitleaks](https://github.com/gitleaks/gitleaks) to be installed.
-- [test-dotnet.yml](hooks/pre-push/test-dotnet.yml):
-  - This ensures .NET code builds and all tests run successfully.
+- [check-dotnet.yml](hooks/pre-push/check-dotnet.yml):
+  - This ensures:
+    - .NET code builds
+    - analyzers run without errors
+    - all tests run successfully[^skip]
   - You can override the default build configuration (`Release`) by adding this to your repo's `lefthook-local.yml`:
 
     ```yaml
@@ -86,3 +89,5 @@ pre-commit:
     ```
 
   > 👉 Assumes that there is a solution file at repo root.
+
+[^skip]: To skip running tests, set `$SKIP_TESTS` to 1.
