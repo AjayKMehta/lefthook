@@ -1,3 +1,6 @@
+# https://lefthook.dev/configuration/glob_matcher/
+glob_matcher: doublestar
+
 min_version: 2.1.0
 
 pre-commit:

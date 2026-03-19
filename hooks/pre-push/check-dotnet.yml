@@ -1,3 +1,6 @@
+# https://lefthook.dev/configuration/glob_matcher/
+glob_matcher: doublestar
+
 templates:
   build_config: Release
 
