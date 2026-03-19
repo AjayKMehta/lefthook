@@ -1,0 +1,11 @@
+min_version: 2.1.0
+
+pre-commit:
+  parallel: true
+  jobs:
+    - name: format-r
+      glob: "*.R"
+      tags: [format, r]
+      args: --log-level warn
+      run: air format --check --include {staged_files}
+      timeout: 30s
