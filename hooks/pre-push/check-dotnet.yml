@@ -20,12 +20,13 @@ pre-push:
           - name: run-tests
             skip:
               - run: |
-                  test "$SKIP_TESTS" -eq 1 || {
-                    HAS_TESTS=$(
-                      dotnet test --list-tests --no-build -c {build_config} >/dev/null 2>&1
-                      echo $?
-                    )
-                    test "$HAS_TESTS" -ne 0
-                  }
+                    # Skip everything if SKIP_TESTS is 1
+                    if [ "${SKIP_TESTS:-0}" -ne 1 ]; then
+                      if ! dotnet test --list-tests --no-build -c "{build_config}" >/dev/null 2>&1; then
+                        echo "Skipping tests: no runnable tests (or list failed)."
+                      else
+                        exit 1
+                      fi
+                    fi
             run: dotnet test --no-build -c {build_config}
             timeout: 300s
