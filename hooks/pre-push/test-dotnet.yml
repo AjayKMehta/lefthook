@@ -4,7 +4,7 @@ templates:
 pre-push:
   parallel: true
   jobs:
-    - name: test-dotnet
+    - name: check-dotnet
       tags: [dotnet, tests]
       glob: "**/*.{cs,csproj,sln,slnx}"
       group:
@@ -12,12 +12,20 @@ pre-push:
         jobs:
           - name: build-solution
             run: dotnet build -c {build_config}
+          - name: analyze-csharp
+            tags: [lint, dotnet]
+            args: --severity error --verbosity normal --no-restore
+            run: dotnet format analyzers --verify-no-changes
+            timeout: 60s
           - name: run-tests
             skip:
               - run: |
-                  HAS_TESTS=$(
-                    dotnet test --list-tests --no-build -c {build_config} >/dev/null 2>&1
-                    echo $?
-                  )
-                  test "$HAS_TESTS" -ne 0
+                  test "$SKIP_TESTS" -eq 1 || {
+                    HAS_TESTS=$(
+                      dotnet test --list-tests --no-build -c {build_config} >/dev/null 2>&1
+                      echo $?
+                    )
+                    test "$HAS_TESTS" -ne 0
+                  }
             run: dotnet test --no-build -c {build_config}
+            timeout: 300s
