@@ -5,7 +5,10 @@ pre-commit:
   jobs:
     - name: lint-json
       glob: "*.json"
-      exclude: .vscode/settings.json
+      exclude:
+        - .vscode/settings.json
+        - '**/packages.lock.json'
+        - '**/package-lock.json'
       tags: [lint, json]
       args: --compact --trailing-newline --enforce-double-quotes  --pretty-print --trim-trailing-commas
       run: jsonlint {staged_files} -C --no-duplicate-keys --quiet --continue --in-place
