@@ -75,7 +75,13 @@ pre-commit:
 
 ### [pre-push](https://git-scm.com/docs/githooks#_pre_push)
 
-- [detect-secrets.yml](hooks/pre-push/detect-secrets.yml): This requires [gitleaks](https://github.com/gitleaks/gitleaks) to be installed.
+- [detect-secrets.yml](hooks/pre-push/detect-secrets.yml): This requires [gitleaks](https://github.com/gitleaks/gitleaks) to be installed. This defaults to using `gitleaks.toml` which you can override by adding this to your repo's `lefthook-local.yml`:
+
+    ```yaml
+    templates:
+      gitleaks_config: <New value>
+    ```
+
 - [check-dotnet.yml](hooks/pre-push/check-dotnet.yml):
   - This ensures:
     - .NET code builds
