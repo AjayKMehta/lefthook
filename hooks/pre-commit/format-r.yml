@@ -7,5 +7,5 @@ pre-commit:
       glob: "*.R"
       tags: [format, r]
       args: --log-level warn
-      run: air format --check --include {staged_files}
+      run: air format --check {staged_files}
       timeout: 30s
