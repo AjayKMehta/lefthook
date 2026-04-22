@@ -47,8 +47,7 @@
     "gitignore": true,
     "ignores": [
         ".git",
-        ".github/",
-        "profile-summary-card-output/"
+        ".github"
     ],
     "outputFormatters": [
         [
