@@ -10,7 +10,7 @@ pre-commit:
         - '**/packages.lock.json'
         - '**/package-lock.json'
       tags: [lint, json]
-      args: --compact --trailing-newline --enforce-double-quotes  --pretty-print --trim-trailing-commas
-      run: jsonlint {staged_files} -C --no-duplicate-keys --quiet --continue --in-place
+      args: --compact -r --enforce-double-quotes -p
+      run: npx jsonlint {staged_files} -C --quiet --continue --in-place
       stage_fixed: true
       timeout: 20s

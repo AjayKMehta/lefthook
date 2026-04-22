@@ -4,4 +4,4 @@ pre-commit:
     - name: lint-markdown
       glob: "*.md"
       tags: [lint, markdown]
-      run: markdownlint-cli2 {staged_files}
+      run: npx markdownlint-cli2 {staged_files}

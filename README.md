@@ -46,7 +46,7 @@ pre-commit:
 
 ### [commit-msg](https://git-scm.com/docs/githooks#_commit_msg)
 
-- [run-commitlint.yml](hooks\commit-msg\run-commitlint.yml): Requires [commitlint](https://github.com/conventional-changelog/commitlint) to be installed.
+- [run-commitlint.yml](hooks\commit-msg\run-commitlint.yml): Uses `npx` to run [commitlint](https://github.com/conventional-changelog/commitlint).
 - [run-typos.yml](hooks\commit-msg\run-typos.yml): Uses [typos](https://github.com/crate-ci/typos) to spellcheck commit messages.
 
 ### [post-checkout](https://git-scm.com/docs/githooks#_post_checkout)
@@ -63,13 +63,13 @@ pre-commit:
 - [format-csharp.yml](hooks/pre-commit/format-csharp.yml): This uses `dotnet format` to check formatting of staged C# files.
 - [lint-actions.yml](hooks/pre-commit/lint-actions.yml): This requires [actionlint](https://github.com/rhysd/actionlint) and [zizmor](https://github.com/zizmorcore/zizmor) to be installed.
 - [lint-docker.yml](hooks/pre-commit/lint-docker.yml): This requires [hadolint](https://github.com/hadolint/hadolint) to be installed.
-- [lint-json.yml](/hooks/pre-commit/lint-json.yml): This requires [jsonlint](https://github.com/prantlf/jsonlint) to be installed. It removes duplicate keys and pretty prints JSON files.
-- [lint-markdown.yml](hooks/pre-commit/lint-markdown.yml): This requires [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2) to be installed.
+- [lint-json.yml](/hooks/pre-commit/lint-json.yml): This uses `npx` to run [jsonlint](https://github.com/prantlf/jsonlint)to lint JSON files.
+- [lint-markdown.yml](hooks/pre-commit/lint-markdown.yml): This uses `npx` to run [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2).
 - [format-r.yml](hooks/pre-commit/lint-r.yml): This requires [air](https://posit-dev.github.io/air/cli.html) to be installed.
 - [lint-r.yml](hooks/pre-commit/lint-r.yml): This requires [jarl](https://jarl.etiennebacher.com/) to be installed.
 - [run-lintr.yml](hooks/pre-commit/run-lintr.yml): This requires R and `lintr` R package to be installed.
 - [lint-toml.yml](hooks/pre-commit/lint-toml.yml): This requires [taplo](https://github.com/tamasfe/taplo) to be installed.
-- [lint-vscode.yml](/hooks/pre-commit/lint-vscode.yml): This requires [jsonlint](https://github.com/prantlf/jsonlint) to be installed. It removes duplicate keys and sorts `settings.json`.
+- [lint-vscode.yml](/hooks/pre-commit/lint-vscode.yml): This uses `npx` to run [jsonlint](https://github.com/prantlf/jsonlint). It removes duplicate keys and sorts `settings.json`.
 - [lint-yaml.yml](hooks/pre-commit/lint-yaml.yml): This requires [yamllint](https://yamllint.readthedocs.io/en/stable/index.html) to be installed.
 - [ruff.yml](hooks/pre-commit/ruff.yml): This requires [ruff](https://github.com/astral-sh/ruff) to be installed.
 

@@ -5,4 +5,4 @@ commit-msg:
   jobs:
     - name: commitlint
       tags: [lint]
-      run: commitlint --edit $1
+      run: npx commitlint --edit $1
