@@ -1,3 +1,6 @@
+# https://lefthook.dev/configuration/glob_matcher/
+glob_matcher: doublestar
+
 min_version: 2.1.0
 
 pre-commit:
@@ -5,13 +8,15 @@ pre-commit:
   jobs:
     - name: ruff
       tags: [python]
-      glob: "*.{py, ipynb}"
+      glob: "**/*.{py, ipynb}"
       group:
         parallel: false
         jobs:
           - name: format-python
+            tags: [format, python]
             run: ruff format --force-exclude {staged_files}
             stage_fixed: true
           - name: lint-python
+            tags: [lint, python]
             run: ruff check --force-exclude --fix {staged_files}
             stage_fixed: true
