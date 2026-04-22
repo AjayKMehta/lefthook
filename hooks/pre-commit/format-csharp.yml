@@ -10,5 +10,6 @@ pre-commit:
       glob: "**/*.cs"
       tags: [format, dotnet]
       args: --severity warn --verbosity normal
-      run: dotnet format --verify-no-changes --include {staged_files}
+      run: dotnet format --include {staged_files}
+      stage_fixed: true
       timeout: 30s
