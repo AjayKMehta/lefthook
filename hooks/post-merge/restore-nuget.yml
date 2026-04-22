@@ -1,3 +1,6 @@
+# https://lefthook.dev/configuration/glob_matcher/
+glob_matcher: doublestar
+
 post-merge:
   parallel: true
   files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
