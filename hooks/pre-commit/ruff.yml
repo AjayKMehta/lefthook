@@ -1,6 +1,3 @@
-# https://lefthook.dev/configuration/glob_matcher/
-glob_matcher: doublestar
-
 min_version: 2.1.0
 
 pre-commit:
@@ -8,7 +5,7 @@ pre-commit:
   jobs:
     - name: ruff
       tags: [python]
-      glob: "**/*.{py, ipynb}"
+      glob: "*.{py, ipynb}"
       group:
         parallel: false
         jobs:
