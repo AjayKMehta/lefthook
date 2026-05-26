@@ -75,6 +75,7 @@ pre-commit:
 - [lint-yaml.yml](hooks/pre-commit/lint-yaml.yml): This requires [yamllint](https://yamllint.readthedocs.io/en/stable/index.html) to be installed.
 - [ruff.yml](hooks/pre-commit/ruff.yml): This requires [ruff](https://github.com/astral-sh/ruff) to be installed.
 - [uv-audit](hooks/pre-commit/uv-audit.yml): This calls `uv audit` on staged files.
+- [uv-lock](hooks/pre-commit/uv-lock.yml): This calls `uv lock --check` if any of `uv.lock`, `uv.toml` or `pyproject.tonl` are modified.
 
 ### [pre-push](https://git-scm.com/docs/githooks#_pre_push)
 
