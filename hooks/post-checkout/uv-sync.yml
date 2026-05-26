@@ -1,0 +1,10 @@
+min_version: 2.1.0
+
+post-checkout:
+  parallel: true
+  jobs:
+    - name: uv-sync
+      tags: [python]
+      script: uv-sync
+      runner: bash
+      timeout: 30s

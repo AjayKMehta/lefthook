@@ -1,0 +1,12 @@
+# https://lefthook.dev/configuration/glob_matcher/
+glob_matcher: doublestar
+
+post-merge:
+  parallel: true
+  files: git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD
+  jobs:
+    - name: uv-sync
+      tags: [python]
+      glob: '**/uv.lock'
+      args: --no-active --all-extras --all-groups
+      run: uv sync --locked

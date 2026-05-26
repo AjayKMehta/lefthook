@@ -52,10 +52,12 @@ pre-commit:
 ### [post-checkout](https://git-scm.com/docs/githooks#_post_checkout)
 
 - [dotnet-clean.yml](hooks/post-checkout/dotnet-clean.yml): Run `dotnet clean` after checkout.
+- [uv-sync.yml](hooks/post-checkout/uv-sync.yml): Run `uv sync` after checkout.
 
 ### [post-merge](https://git-scm.com/docs/githooks#_post_merge)
 
 - [restore-nuget.yml](hooks/post-merge/restore-nuget.yml): Restore NuGet packages if any lock file changes.
+- [uv-sync.yml](hooks/post-merge/uv-sync.yml): Run `uv sync` if `uv.lock` file changes.
 
 ### [pre-commit](https://git-scm.com/docs/githooks#_pre_commit)
 
