@@ -76,15 +76,9 @@ pre-commit:
 - [ruff.yml](hooks/pre-commit/ruff.yml): This requires [ruff](https://github.com/astral-sh/ruff) to be installed.
 - [uv-audit](hooks/pre-commit/uv-audit.yml): This calls `uv audit` on staged files.
 - [uv-lock](hooks/pre-commit/uv-lock.yml): This calls `uv lock --check` if any of `uv.lock`, `uv.toml` or `pyproject.tonl` are modified.
+- [detect-secrets.yml](hooks/pre-commit/detect-secrets.yml): This requires [betterleaks](https://betterleaks.com/) to be installed.
 
 ### [pre-push](https://git-scm.com/docs/githooks#_pre_push)
-
-- [detect-secrets.yml](hooks/pre-push/detect-secrets.yml): This requires [gitleaks](https://github.com/gitleaks/gitleaks) to be installed. This defaults to using `gitleaks.toml` which you can override by adding this to your repo's `lefthook-local.yml`:
-
-    ```yaml
-    templates:
-      gitleaks_config: <New value>
-    ```
 
 - [check-dotnet.yml](hooks/pre-push/check-dotnet.yml):
   - This ensures:
