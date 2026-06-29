@@ -1,1 +1,3 @@
+*.yml      text eol=lf
+
 .lefthook/post-checkout/dotnet-clean linguist-language=bash
