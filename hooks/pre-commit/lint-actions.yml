@@ -17,4 +17,4 @@ pre-commit:
             tags: [lint, github]
             args: --min-severity medium
             run: zizmor {staged_files}
-            timeout: 10s
+            timeout: 20s
