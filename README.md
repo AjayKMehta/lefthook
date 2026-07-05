@@ -47,7 +47,7 @@ pre-commit:
 ### [commit-msg](https://git-scm.com/docs/githooks#_commit_msg)
 
 - [run-commitlint.yml](hooks\commit-msg\run-commitlint.yml): Uses `npx` to run [commitlint](https://github.com/conventional-changelog/commitlint).
-- [run-typos.yml](hooks\commit-msg\run-typos.yml): Uses [typos](https://github.com/crate-ci/typos) to spellcheck commit messages.
+- [run-typos.yml](hooks\commit-msg\run-typos.yml): Uses [typos](https://github.com/crate-ci/typos) to spellcheck commit messages. To customize behavior, [please create a config file in your repo](https://github.com/crate-ci/typos/blob/master/docs/reference.md#configuration).
 
 ### [post-checkout](https://git-scm.com/docs/githooks#_post_checkout)
 
@@ -61,7 +61,7 @@ pre-commit:
 
 ### [pre-commit](https://git-scm.com/docs/githooks#_pre_commit)
 
-- [analyze-csharp.yml](hooks/pre-commit/analyze-csharp.yml): This uses `dotnet format` to run analyzers on staged C# files.
+- [analyze-csharp.yml](hooks/pre-commit/analyze-csharp.yml): This uses `dotnet format` to run analyzers on staged C# files. You need to set `ANALYZE_DOTNET` environment variable to a non-zero value to run this.
 - [format-csharp.yml](hooks/pre-commit/format-csharp.yml): This uses `dotnet format` to check formatting of staged C# files.
 - [lint-actions.yml](hooks/pre-commit/lint-actions.yml): This requires [actionlint](https://github.com/rhysd/actionlint) and [zizmor](https://github.com/zizmorcore/zizmor) to be installed.
 - [lint-docker.yml](hooks/pre-commit/lint-docker.yml): This requires [hadolint](https://github.com/hadolint/hadolint) to be installed.
