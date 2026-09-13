@@ -71,7 +71,7 @@ pre-commit:
 - [lint-r.yml](hooks/pre-commit/lint-r.yml): This requires [jarl](https://jarl.etiennebacher.com/) to be installed.
 - [run-lintr.yml](hooks/pre-commit/run-lintr.yml): This requires R and `lintr` R package to be installed.
 - [lint-toml.yml](hooks/pre-commit/lint-toml.yml): This requires [taplo](https://github.com/tamasfe/taplo) to be installed.
-- [lint-vscode.yml](/hooks/pre-commit/lint-vscode.yml): This uses `npx` to run [jsonlint](https://github.com/prantlf/jsonlint). It removes duplicate keys and sorts `settings.json`.
+- [lint-vscode.yml](/hooks/pre-commit/lint-vscode.yml): This uses `npx` to run [jsonlint](https://github.com/prantlf/jsonlint). It removes duplicate keys and sorts `settings.json`. It also lints `launch.json`.
 - [lint-yaml.yml](hooks/pre-commit/lint-yaml.yml): This requires [yamllint](https://yamllint.readthedocs.io/en/stable/index.html) to be installed.
 - [ruff.yml](hooks/pre-commit/ruff.yml): This requires [ruff](https://github.com/astral-sh/ruff) to be installed.
 - [uv-audit](hooks/pre-commit/uv-audit.yml): This calls `uv audit` on staged files.

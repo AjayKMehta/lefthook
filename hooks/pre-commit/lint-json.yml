@@ -9,7 +9,8 @@ pre-commit:
     - name: lint-json
       glob: "*.json"
       exclude:
-        - .vscode/settings.json
+        - '**/.vscode/settings.json'
+        - '**/.vscode/launch.json'
         - '**/packages.lock.json'
         - '**/package-lock.json'
       tags: [lint, json]
